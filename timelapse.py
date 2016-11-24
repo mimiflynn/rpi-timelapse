@@ -4,9 +4,11 @@ from os import system
 
 camera = PiCamera()
 
+camera.resolution = (3280, 2464)
 #camera.resolution = (1024, 768)
-camera.resolution = (2592, 1944)
-camera.framerate = 15
+#camera.resolution = (2592, 1944)
+#camera.resolution = (3280, 2464)
+#camera.framerate = 15
 
 
 for i in range(10):
