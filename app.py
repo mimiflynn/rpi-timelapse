@@ -3,14 +3,14 @@ from os import system
 from picamera import PiCamera
 from time import sleep
 
-camera = PiCamera()
-camera.resolution = (3280, 2464)
-#camera.resolution = (1024, 768)
-#camera.resolution = (2592, 1944)
-#camera.resolution = (3280, 2464)
-#camera.framerate = 15
-
 def timelapse():
+  camera = PiCamera()
+  camera.resolution = (3280, 2464)
+  #camera.resolution = (1024, 768)
+  #camera.resolution = (2592, 1944)
+  #camera.resolution = (3280, 2464)
+  #camera.framerate = 15
+  
   for i in range(10):
     sleep(5)
     camera.capture('/home/pi/Projects/Photos/images/image{0:04d}.jpg'.format(i))
