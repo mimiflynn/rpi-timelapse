@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 from os import system
 from picamera import PiCamera
 from time import sleep
