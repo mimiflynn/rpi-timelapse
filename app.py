@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from os import system
 from picamera import PiCamera
 from time import sleep
@@ -23,8 +23,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+  return render_template('index.html')
+
+@app.route('/photos')
+def photos():
   timelapse()
-  return 'Hello world'
+  return render_template('photos.html')
 
 if __name__ == '__main__':
   app.run(debug=True, host='0.0.0.0')
