@@ -34,5 +34,9 @@ def photos():
 def images(path):
     return send_from_directory('images', path)
 
+@app.route('/styles/<path:path>')
+def styles(path):
+    return send_from_directory('styles', path)
+
 if __name__ == '__main__':
   app.run(debug=True, host='0.0.0.0')
