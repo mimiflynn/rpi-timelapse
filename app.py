@@ -30,9 +30,9 @@ def photos():
   timelapse()
   return render_template('photos.html')
 
-@app.route('/images')
-def images():
-    return send_from_directory('images')
+@app.route('/images/<path:path>')
+def images(path):
+    return send_from_directory('images', path)
 
 if __name__ == '__main__':
   app.run(debug=True, host='0.0.0.0')
