@@ -53,7 +53,8 @@ def index():
 @app.route('/timelapse')
 def photos():
   timelapse()
-  return render_template('photos.html')
+  path = '/home/pi/Projects/Photos/images'
+  return render_template('photos.html', tree=make_tree(path))
 
 @app.route('/view')
 def view():
