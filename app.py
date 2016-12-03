@@ -1,6 +1,6 @@
+import os
+
 from flask import Flask, render_template, send_from_directory
-from os import system
-from os import os
 from picamera import PiCamera
 from time import sleep
 
@@ -26,7 +26,7 @@ def timelapse():
     camera.capture('/home/pi/Projects/Photos/images/image{0:04d}.jpg'.format(i))
 
   camera.close()
-  #system('convert -delay 10 -loop 0 images/image*.jpg images/animation.gif')
+  #os.system('convert -delay 10 -loop 0 images/image*.jpg images/animation.gif')
   print('done taking timelapse')
 
 def make_tree(path):
