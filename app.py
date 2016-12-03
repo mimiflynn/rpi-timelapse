@@ -37,10 +37,10 @@ def make_tree(path):
   else:
     for name in lst:
       fn = os.path.join(path, name)
-        if os.path.isdir(fn):
-          tree['children'].append(make_tree(fn))
-        else:
-          tree['children'].append(dict(name=name))
+      if os.path.isdir(fn):
+        tree['children'].append(make_tree(fn))
+      else:
+        tree['children'].append(dict(name=name))
   return tree
 
 app = Flask(__name__)
