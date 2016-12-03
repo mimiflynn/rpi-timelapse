@@ -26,7 +26,7 @@
       <div class="row">
         <ul>
         {%- for item in tree.children recursive %}
-          <li>{{ item.name }}
+          <li><img src="/images/{{ item.name }}" />
           {%- if item.children -%}
             <ul>{{ loop(item.children) }}</ul>
           {%- endif %}</li>
