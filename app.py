@@ -6,6 +6,7 @@ from time import sleep
 
 def singlephoto():
   camera = PiCamera()
+  sleep(5)
   camera.resolution = (3280, 2464)
   camera.capture('/home/pi/Projects/Photos/images/single.jpg')
   camera.close()
