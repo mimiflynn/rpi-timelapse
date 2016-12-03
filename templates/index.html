@@ -18,15 +18,33 @@
     <title>Pi Zero Control Server</title>
   </head>
   <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <h1>
+            <a class="navbar-brand" href="/">
+              Sky Shack Observatory
+            </a>
+          </h1>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Options <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/view">View recent photos</a></li>
+                <li><a href="/photos">Take 50 photos</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="container-fluid">
-      <h1>Welcome!</h1>
+      <h1>Current Conditions</h1>
       <div class="single-photo">
         <img src="/images/single.jpg" />
       </div>
-      <ul>
-        <li><a href="/view">View recent photos</a></li>
-        <li><a href="/photos">Take 10 photos</a></li>
-      </ul>
     </div>
   </body>
 </html>
