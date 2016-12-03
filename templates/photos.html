@@ -24,40 +24,15 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-md-3 photo">
-          <img src="/images/image0000.jpg" />
-        </div>
-        <div class="col-md-3 photo">
-          <img src="/images/image0001.jpg" />
-        </div>
-        <div class="col-md-3 photo">
-          <img src="/images/image0002.jpg" />
-        </div>
-        <div class="col-md-3 photo">
-          <img src="/images/image0003.jpg" />
-        </div>
+        <ul>
+        {%- for item in tree.children recursive %}
+          <li>{{ item.name }}
+          {%- if item.children -%}
+            <ul>{{ loop(item.children) }}</ul>
+          {%- endif %}</li>
+        {%- endfor %}
+        </ul>
       </div>
-      <div class="row">
-        <div class="col-md-3 photo">
-          <img src="/images/image0004.jpg" />
-        </div>
-        <div class="col-md-3 photo">
-          <img src="/images/image0005.jpg" />
-        </div>
-        <div class="col-md-3 photo">
-          <img src="/images/image0006.jpg" />
-        </div>
-        <div class="col-md-3 photo">
-          <img src="/images/image0007.jpg" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3 photo">
-          <img src="/images/image0008.jpg" />
-        </div>
-        <div class="col-md-3 photo">
-          <img src="/images/image0009.jpg" />
-        </div>
     </div>
   </body>
 </html>

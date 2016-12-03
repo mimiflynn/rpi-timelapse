@@ -1,38 +1,64 @@
 from flask import Flask, render_template, send_from_directory
 from os import system
+from os import os
 from picamera import PiCamera
 from time import sleep
 
-def timelapse():
+def singlephoto():
   camera = PiCamera()
   camera.resolution = (3280, 2464)
-  #camera.resolution = (1024, 768)
+  camera.framerate = 15
+  camera.capture('/home/pi/Projects/Photos/images/single.jpg')
+  camera.close()
+  print('done taking single photo')
+
+
+def timelapse():
+  camera = PiCamera()
+  #camera.resolution = (3280, 2464)
+  camera.resolution = (1024, 768)
   #camera.resolution = (2592, 1944)
   #camera.resolution = (3280, 2464)
   #camera.framerate = 15
 
-  for i in range(10):
+  for i in range(50):
     sleep(5)
     camera.capture('/home/pi/Projects/Photos/images/image{0:04d}.jpg'.format(i))
 
   camera.close()
   #system('convert -delay 10 -loop 0 images/image*.jpg images/animation.gif')
-  print('done')
+  print('done taking timelapse')
+
+def make_tree(path):
+  tree = dict(name=os.path.basename(path), children=[])
+  try: lst = os.listdir(path)
+  except OSError:
+    pass #ignore errors
+  else:
+    for name in lst:
+      fn = os.path.join(path, name)
+        if os.path.isdir(fn):
+          tree['children'].append(make_tree(fn))
+        else:
+          tree['children'].append(dict(name=name))
+  return tree
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
+  singlephoto()
   return render_template('index.html')
 
-@app.route('/photos')
+@app.route('/timelapse')
 def photos():
   timelapse()
   return render_template('photos.html')
 
 @app.route('/view')
 def view():
-  return render_template('photos.html')
+  path = '/home/pi/Projects/Photos/images'
+  return render_template('photos.html', tree=make_tree(path))
 
 @app.route('/images/<path:path>')
 def images(path):

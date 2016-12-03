@@ -25,3 +25,5 @@ https://www.raspberrypi.org/learning/getting-started-with-picamera/worksheet/
 https://www.raspberrypi.org/learning/timelapse-setup/worksheet/
 
 https://www.raspberrypi.org/learning/python-web-server-with-flask/worksheet/
+
+http://stackoverflow.com/questions/10961378/how-to-generate-an-html-directory-list-using-python/10961991#10961991
