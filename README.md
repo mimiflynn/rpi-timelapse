@@ -1,8 +1,13 @@
 # Raspberry Pi Zero Timelapse
 
+
+
 ## Objective
 
 Trigger timelapse capture from my phone via password protected website.
+
+### Tech Stack
+
 
 
 ## References
@@ -10,6 +15,8 @@ Trigger timelapse capture from my phone via password protected website.
 ### Documentation
 
 http://picamera.readthedocs.io/en/release-1.11/fov.html
+
+http://flask.pocoo.org/docs/0.11/
 
 ### Tutorials
 

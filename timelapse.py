@@ -10,7 +10,7 @@ camera.resolution = (3280, 2464)
 #camera.resolution = (3280, 2464)
 #camera.framerate = 15
 
-for i in range(10):
+for i in range(50):
   sleep(5)
   camera.capture('/home/pi/Projects/Photos/images/image{0:04d}.jpg'.format(i))
 
