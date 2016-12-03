@@ -30,6 +30,10 @@ def photos():
   timelapse()
   return render_template('photos.html')
 
+@app.route('/view')
+def view():
+  return render_template('photos.html')
+
 @app.route('/images/<path:path>')
 def images(path):
     return send_from_directory('images', path)
