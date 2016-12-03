@@ -7,7 +7,6 @@ from time import sleep
 def singlephoto():
   camera = PiCamera()
   camera.resolution = (3280, 2464)
-  camera.framerate = 15
   camera.capture('/home/pi/Projects/Photos/images/single.jpg')
   camera.close()
   print('done taking single photo')
