@@ -28,6 +28,7 @@ def timelapse():
     camera.capture('/home/pi/Projects/Photos/images/image{0:04d}.jpg'.format(i))
 
   camera.close()
+  os.system('tar -zcvf {:%Y-%m-%d %H:%M:%S}.tar.gz images/'.format(datetime.datetime.now()))
   #os.system('convert -delay 10 -loop 0 images/image*.jpg images/animation.gif')
   print('done taking timelapse')
 
