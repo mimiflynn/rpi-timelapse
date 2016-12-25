@@ -13,6 +13,7 @@ def singlephoto():
   camera.stop_preview()
   camera.close()
   print('done taking single photo')
+  os.system('cp images/single.jpg images/single-{:%Y-%m-%d %H:%M:%S}.jpg'.format(datetime.datetime.now()))
 
 
 def timelapse():
