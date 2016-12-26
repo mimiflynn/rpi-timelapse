@@ -75,7 +75,7 @@ def view():
 
 
 @app.route('/archive')
-def view():
+def archive():
     path = '/home/pi/Projects/Photos/archive'
     return render_template('archive.html', tree=make_tree(path))
 
@@ -86,7 +86,7 @@ def images(path):
 
 
 @app.route('/archive/<path:path>')
-def images(path):
+def archives(path):
     return send_from_directory('archive', path)
 
 
