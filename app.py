@@ -7,6 +7,7 @@ from time import sleep
 
 
 def singlephoto():
+    print('start taking single photo at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
     camera = PiCamera()
     camera.resolution = (3280, 2464)
     camera.start_preview()
@@ -19,6 +20,7 @@ def singlephoto():
 
 
 def timelapse():
+    print('start taking timelapse at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
     camera = PiCamera()
     # camera.resolution = (3280, 2464)
     camera.resolution = (1024, 768)
