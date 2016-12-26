@@ -13,8 +13,8 @@ def singlephoto():
   camera.capture('/home/pi/Projects/Photos/images/single.jpg')
   camera.stop_preview()
   camera.close()
-  print('done taking single photo')
-  os.system('cp images/single.jpg images/single-{:%Y-%m-%d %H:%M:%S}.jpg'.format(datetime.datetime.now()))
+  print('done taking single photo at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
+  os.system('cp images/single.jpg images/single-{:%Y-%m-%d_%H-%M-%S}.jpg'.format(datetime.datetime.now()))
 
 
 def timelapse():
@@ -30,9 +30,9 @@ def timelapse():
     camera.capture('/home/pi/Projects/Photos/images/image{0:04d}.jpg'.format(i))
 
   camera.close()
-  os.system('tar -zcvf {:%Y-%m-%d %H:%M:%S}.tar.gz images/'.format(datetime.datetime.now()))
+  os.system('tar -zcvf {:%Y-%m-%d_%H-%M-%S}.tar.gz images/'.format(datetime.datetime.now()))
   #os.system('convert -delay 10 -loop 0 images/image*.jpg images/animation.gif')
-  print('done taking timelapse')
+  print('done taking timelapse at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
 
 def make_tree(path):
   tree = dict(name=os.path.basename(path), children=[])
