@@ -66,9 +66,18 @@ def view():
   path = '/home/pi/Projects/Photos/images'
   return render_template('photos.html', tree=make_tree(path))
 
+@app.route('/archive')
+def view():
+  path = '/home/pi/Projects/Photos/archive'
+  return render_template('archive.html', tree=make_tree(path))
+
 @app.route('/images/<path:path>')
 def images(path):
     return send_from_directory('images', path)
+
+@app.route('/archive/<path:path>')
+def images(path):
+    return send_from_directory('archive', path)
 
 @app.route('/styles/<path:path>')
 def styles(path):

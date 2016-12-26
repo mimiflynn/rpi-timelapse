@@ -1,12 +1,19 @@
 # Raspberry Pi Zero Timelapse
 
+## Startup
 
+`python3 app.py`
 
 ## Objective
 
 Trigger timelapse capture from my phone via password protected website.
 
 ### Tech Stack
+
+Python 3.4
+Flask
+
+## Features
 
 
 
