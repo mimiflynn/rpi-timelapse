@@ -43,4 +43,4 @@ http://stackoverflow.com/questions/10961378/how-to-generate-an-html-directory-li
 
 ## Notes
 
-to make a gif from the timelapse images: `convert -delay 20 -loop 0 *.jpg result.gif`
+to make a gif from the timelapse images: `convert -delay 20 -loop 0 images*.jpg result.gif`
