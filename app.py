@@ -34,7 +34,7 @@ def timelapse():
 
     camera.close()
     os.system('tar -zcvf archive/{:%Y-%m-%d_%H-%M-%S}.tar.gz images/'.format(datetime.datetime.now()))
-    # os.system('convert -delay 10 -loop 0 images/image*.jpg images/animation.gif')
+    # os.system('convert -delay 10 -loop 0 images/image*.jpg images/animation-{:%Y-%m-%d_%H-%M-%S}.gif')
     print('done taking timelapse at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
 
 
