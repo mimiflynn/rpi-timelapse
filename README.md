@@ -17,11 +17,17 @@ Flask
 
 `/` - takes a photo and displays it
 
-`/view` - view last timelapse images
+`/view` - view all single photos
 
 `/timelapse` - takes 50 photos with a 5 second delay
 
-`/archive` - shows contents of archive directory that contains zipped up timelapse images
+`/timelapses` - view  timelapse photos
+
+`/gif` - create gif from last timelapse
+
+`/animations` - view all timelaps gifs
+
+`/archive` - contains list of zipped up timelapse images
 
 ## References
 

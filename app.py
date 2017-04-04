@@ -30,17 +30,16 @@ def timelapse():
 
     for i in range(50):
         sleep(5)
-        camera.capture('/home/pi/Projects/Photos/images/image{0:04d}.jpg'.format(i))
+        camera.capture('/home/pi/Projects/Photos/timelapse/image{0:04d}.jpg'.format(i))
 
     camera.close()
-    os.system('tar -zcvf archive/{:%Y-%m-%d_%H-%M-%S}.tar.gz images/'.format(datetime.datetime.now()))
-    # os.system('convert -delay 10 -loop 0 images/image*.jpg images/animation-{:%Y-%m-%d_%H-%M-%S}.gif')
+    os.system('tar -zcvf archive/{:%Y-%m-%d_%H-%M-%S}.tar.gz timelapse/'.format(datetime.datetime.now()))
     print('done taking timelapse at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
 
 
 def create_gif():
     print('create gif of timelapse at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
-    os.system('convert -delay 10 -loop 0 images/image*.jpg gifs/animation-{:%Y-%m-%d_%H-%M-%S}.gif'.format(datetime.datetime.now()))
+    os.system('convert -delay 10 -loop 0 timelapse/image*.jpg gifs/animation-{:%Y-%m-%d_%H-%M-%S}.gif'.format(datetime.datetime.now()))
     print('done creating gif of timelapse at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
 
 
@@ -92,7 +91,7 @@ def archive():
 def gif():
     create_gif()
     path = '/home/pi/Projects/Photos/gifs'
-    return render_template('photos.html', tree=make_tree(path))
+    return render_template('animations.html', tree=make_tree(path))
 
 
 @app.route('/animations')
