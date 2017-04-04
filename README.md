@@ -1,5 +1,7 @@
 # Raspberry Pi Zero Timelapse
 
+[[https://github.com/mimiflynn/rpi-timelapse/blob/master/result.gif|alt=timelapse]]
+
 ## Startup
 
 `python3 app.py`
@@ -20,8 +22,6 @@ Flask
 `/view` - view all single photos
 
 `/timelapse` - takes 50 photos with a 5 second delay
-
-`/timelapses` - view  timelapse photos
 
 `/gif` - create gif from last timelapse
 
