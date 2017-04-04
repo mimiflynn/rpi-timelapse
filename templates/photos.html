@@ -3,7 +3,7 @@
   <h1>Single Photo Archives</h1>
   <div class="row">
     <div>
-    {%- for item in tree.children.sort() %}
+    {%- for item in tree.children %}
       <div class="single-photo"><img src="/images/{{ item.name }}" /></div>
     {%- endfor %}
     </div>
