@@ -37,6 +37,10 @@ def timelapse():
     # os.system('convert -delay 10 -loop 0 images/image*.jpg images/animation-{:%Y-%m-%d_%H-%M-%S}.gif')
     print('done taking timelapse at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
 
+def create_gif():
+    print('create gif of timelapse at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
+    os.system('convert -delay 10 -loop 0 images/image*.jpg gifs/animation-{:%Y-%m-%d_%H-%M-%S}.gif')
+    print('done creating gif of timelapse at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
 
 def make_tree(path):
     tree = dict(name=os.path.basename(path), children=[])
@@ -80,6 +84,13 @@ def view():
 def archive():
     path = '/home/pi/Projects/Photos/archive'
     return render_template('archive.html', tree=make_tree(path))
+
+
+@app.route('/gif')
+def gif():
+    create_gif()
+    path = '/home/pi/Projects/Photos/gifs'
+    return render_template('photos.html', tree=make_tree(path))
 
 
 @app.route('/images/<path:path>')
