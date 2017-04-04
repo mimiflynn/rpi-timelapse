@@ -12,6 +12,7 @@ body {
 
 .single-photo {
   width: 100%;
+  margin-bottom: 2em;
 }
 .single-photo img {
   width: 100%;
