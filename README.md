@@ -4,6 +4,8 @@
 
 ## Startup
 
+For GIF making magic install ImageMagick with `sudo apt install imagemagick`.
+
 `python3 app.py`
 
 ## Objective
@@ -12,8 +14,11 @@ Trigger timelapse capture from my phone via password protected website.
 
 ### Tech Stack
 
-Python 3.4
-Flask
+- Python 3.4
+- Flask
+- ImageMagick
+- Raspberry Pi 3
+- Raspberry Pi Camera
 
 ## Features
 
