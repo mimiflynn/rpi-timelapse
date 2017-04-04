@@ -4,9 +4,9 @@
   <div class="row">
     <div>
     {%- for item in tree.children recursive %}
-      <div><img src="/images/{{ item.name }}" />
+      <div class="single-photo"><img src="/images/{{ item.name }}" />
       {%- if item.children -%}
-        <div>{{ loop(item.children) }}</div>
+        <div class="single-photo">{{ loop(item.children) }}</div>
       {%- endif %}</div>
     {%- endfor %}
     </div>
