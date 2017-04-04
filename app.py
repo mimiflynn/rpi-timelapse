@@ -106,7 +106,7 @@ def images(path):
 
 @app.route('/gifs/<path:path>')
 def gifs(path):
-    return send_from_directory('images', path)
+    return send_from_directory('gifs', path)
 
 
 @app.route('/archive/<path:path>')
