@@ -3,7 +3,7 @@
   <h1>Recent Timelapses</h1>
   <div class="row">
     <div>
-    {%- for item in tree.children recursive %}
+    {%- for item in tree.children %}
       <div class="photo"><img src="/gifs/{{ item.name }}" /></div>
     {%- endfor %}
     </div>
