@@ -2,6 +2,16 @@
 
 ![timelapse](https://github.com/mimiflynn/rpi-timelapse/blob/master/result.gif)
 
+## Tech Stack
+
+- Python 3.4
+- Flask
+- ImageMagick
+- Raspberry Pi 3
+- Raspberry Pi Camera
+
+[Blog Post Describing Setup](http://trailingwhitespace.com/articles/rpi-camera-flask/)
+
 ## Startup
 
 For GIF making magic install ImageMagick with `sudo apt install imagemagick`.
@@ -11,14 +21,6 @@ For GIF making magic install ImageMagick with `sudo apt install imagemagick`.
 ## Objective
 
 Trigger timelapse capture from my phone via password protected website.
-
-### Tech Stack
-
-- Python 3.4
-- Flask
-- ImageMagick
-- Raspberry Pi 3
-- Raspberry Pi Camera
 
 ## Features
 
