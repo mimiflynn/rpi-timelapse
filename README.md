@@ -1,6 +1,6 @@
 # Raspberry Pi Zero Timelapse
 
-[[https://github.com/mimiflynn/rpi-timelapse/blob/master/result.gif|alt=timelapse]]
+![timelapse](https://github.com/mimiflynn/rpi-timelapse/blob/master/result.gif)
 
 ## Startup
 
