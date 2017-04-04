@@ -5,9 +5,6 @@
     <div>
     {%- for item in tree.children recursive %}
       <div class="single-photo"><img src="/images/{{ item.name }}" />
-      {%- if item.children -%}
-        <div class="single-photo">{{ loop(item.children) }}</div>
-      {%- endif %}</div>
     {%- endfor %}
     </div>
   </div>

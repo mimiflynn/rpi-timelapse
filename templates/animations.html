@@ -4,10 +4,7 @@
   <div class="row">
     <div>
     {%- for item in tree.children recursive %}
-      <div><img src="/gifs/{{ item.name }}" />
-      {%- if item.children -%}
-        <div>{{ loop(item.children) }}</div>
-      {%- endif %}</div>
+      <div class="photo"><img src="/gifs/{{ item.name }}" />
     {%- endfor %}
     </div>
   </div>
