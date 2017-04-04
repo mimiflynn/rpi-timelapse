@@ -46,7 +46,7 @@ def create_gif():
 def make_tree(path):
     tree = dict(name=os.path.basename(path), children=[])
     try:
-        lst = os.listdir(path).sort()
+        lst = os.listdir(path)
     except OSError:
         pass  # ignore errors
     else:
