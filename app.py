@@ -93,13 +93,21 @@ def gif():
     return render_template('photos.html', tree=make_tree(path))
 
 
+@app.route('/animations')
+def animations():
+    path = '/home/pi/Projects/Photos/gifs'
+    return render_template('photos.html', tree=make_tree(path))
+
+
 @app.route('/images/<path:path>')
 def images(path):
     return send_from_directory('images', path)
 
+
 @app.route('/gifs/<path:path>')
 def gifs(path):
-    return send_from_directory('iamges', path)
+    return send_from_directory('images', path)
+
 
 @app.route('/archive/<path:path>')
 def archives(path):
