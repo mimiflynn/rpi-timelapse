@@ -10,7 +10,7 @@
 - Raspberry Pi 3
 - Raspberry Pi Camera
 
-[Blog Post Describing Setup](http://trailingwhitespace.com/articles/rpi-camera-flask/)
+[Blog Post Describing Setup](https://trailingwhitespace.com/articles/rpi-camera-flask/)
 
 ## Startup
 
