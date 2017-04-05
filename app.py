@@ -71,8 +71,9 @@ def index():
 @app.route('/timelapse')
 def photos():
     timelapse()
+    create_gif()
     path = '/home/pi/Projects/Photos/images'
-    return render_template('photos.html', tree=make_tree(path))
+    return render_template('animations.html', tree=make_tree(path))
 
 
 @app.route('/view')
