@@ -72,7 +72,7 @@ def index():
 def photos():
     timelapse()
     create_gif()
-    path = '/home/pi/Projects/Photos/images'
+    path = '/home/pi/Projects/Photos/gifs'
     return render_template('animations.html', tree=make_tree(path))
 
 
