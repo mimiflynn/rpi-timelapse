@@ -48,7 +48,6 @@ def make_tree(path):
 
     try:
         lst = os.listdir(path)
-        lst.sort(key=lambda x: os.path.getmtime(x))
     except OSError:
         pass  # ignore errors
     else:
