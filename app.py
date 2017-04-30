@@ -45,10 +45,10 @@ def create_gif():
 
 def make_tree(path):
     tree = dict(name=os.path.basename(path), children=[])
-    tree.sort(key=lambda x: os.path.getmtime(x))
 
     try:
         lst = os.listdir(path)
+        lst.sort(key=lambda x: os.path.getmtime(x))
     except OSError:
         pass  # ignore errors
     else:
