@@ -1,64 +1,7 @@
-import os
-import datetime
-
 from flask import Flask, render_template, send_from_directory
-from picamera import PiCamera
-from time import sleep
 
-
-def singlephoto():
-    print('start taking single photo at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
-    camera = PiCamera()
-    camera.resolution = (3280, 2464)
-    camera.start_preview()
-    sleep(2)
-    camera.capture('/home/pi/Projects/Photos/images/single.jpg')
-    camera.stop_preview()
-    camera.close()
-    print('done taking single photo at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
-    os.system('cp images/single.jpg images/single-{:%Y-%m-%d_%H-%M-%S}.jpg'.format(datetime.datetime.now()))
-
-
-def timelapse():
-    print('start taking timelapse at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
-    camera = PiCamera()
-    # camera.resolution = (3280, 2464)
-    camera.resolution = (1024, 768)
-    # camera.resolution = (2592, 1944)
-    # camera.resolution = (3280, 2464)
-    # camera.framerate = 15
-
-    for i in range(50):
-        sleep(5)
-        camera.capture('/home/pi/Projects/Photos/timelapse/image{0:04d}.jpg'.format(i))
-
-    camera.close()
-    os.system('tar -zcvf archive/{:%Y-%m-%d_%H-%M-%S}.tar.gz timelapse/'.format(datetime.datetime.now()))
-    print('done taking timelapse at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
-
-
-def create_gif():
-    print('create gif of timelapse at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
-    os.system('convert -delay 10 -loop 0 timelapse/image*.jpg gifs/animation-{:%Y-%m-%d_%H-%M-%S}.gif'.format(datetime.datetime.now()))
-    print('done creating gif of timelapse at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
-
-
-def make_tree(path):
-    tree = dict(name=os.path.basename(path), children=[])
-
-    try:
-        lst = os.listdir(path)
-        lst.sort()
-    except OSError:
-        pass  # ignore errors
-    else:
-        for name in lst:
-            fn = os.path.join(path, name)
-            if os.path.isdir(fn):
-                tree['children'].append(make_tree(fn))
-            else:
-                tree['children'].append(dict(name=name))
-    return tree
+from utils.camera import singlephoto, timelapse, create_gif
+from utils.utils import make_tree
 
 
 app = Flask(__name__)
