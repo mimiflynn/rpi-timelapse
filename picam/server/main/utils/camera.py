@@ -14,7 +14,7 @@ def singlephoto():
     camera.stop_preview()
     camera.close()
     print('done taking single photo at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
-    os.system('cp picam/client/static/images/single.jpg static/images/single-{:%Y-%m-%d_%H-%M-%S}.jpg'.format(datetime.datetime.now()))
+    os.system('cp picam/client/static/images/single.jpg picam/client/static/images/single-{:%Y-%m-%d_%H-%M-%S}.jpg'.format(datetime.datetime.now()))
 
 
 def timelapse():
