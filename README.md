@@ -24,14 +24,13 @@ Trigger timelapse capture from my phone via password protected website.
 
 ## Deploy
 
-
 ### systemd
 
 
 /etc/systemd/system/photos.service
 ```buildoutcfg
 [Unit]
-Description=Gunicorn instance to serve photos
+Description=Gunicorn instance to take timelapses
 After=network.target
 
 [Service]

@@ -1,6 +1,7 @@
-archive/*
-images/*
-photos/*
+picam/client/static/archive/*
+picam/client/static/images/*
+picam/client/static/photos/*
+picam/client/static/timelapse/*
 
 *.pyc
 
