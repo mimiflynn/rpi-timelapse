@@ -24,10 +24,17 @@ Trigger timelapse capture from my phone via password protected website.
 
 ## Deploy
 
+### Create directories
+
+```buildoutcfg
+mkdir picam/client/static/{archive,gifs,images,timelapse}
+
+```
+
 ### systemd
 
+`/etc/systemd/system/photos.service`
 
-/etc/systemd/system/photos.service
 ```buildoutcfg
 [Unit]
 Description=Gunicorn instance to take timelapses
@@ -53,6 +60,8 @@ sudo systemctl stop photos.service
 
 
 ### nginx
+
+`/etc/nginx/sites-available/default`
 
 ```buildoutcfg
 upstream flask_server {
