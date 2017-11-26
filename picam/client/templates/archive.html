@@ -4,7 +4,7 @@
   <div class="row">
     <ul>
     {%- for item in tree.children recursive %}
-      <li><a href="/archive/{{ item.name }}">{{ item.name }}</a>
+      <li><a href="/static/archive/{{ item.name }}">{{ item.name }}</a>
       {%- if item.children -%}
         <ul>{{ loop(item.children) }}</ul>
       {%- endif %}</li>

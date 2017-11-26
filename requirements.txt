@@ -1,0 +1,2 @@
+Flask_Script==2.0.6
+Flask==0.10.1
