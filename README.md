@@ -77,7 +77,7 @@ server {
 	
 	# Configure NGINX to deliver static content from the specified folder
     location /static {
-       alias /home/pi/Projects/Photos/static;
+       alias /home/pi/Projects/Photos/picam/client/static;
     }
 }
 ```

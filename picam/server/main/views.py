@@ -44,24 +44,3 @@ def gif():
 def animations():
     path = '/home/pi/Projects/Photos/static/gifs'
     return render_template('animations.html', tree=make_tree(path))
-
-
-@main_blueprint.route('/images/<path:path>')
-def images(path):
-    return send_from_directory('images', path)
-
-
-@main_blueprint.route('/gifs/<path:path>')
-def gifs(path):
-    return send_from_directory('gifs', path)
-
-
-@main_blueprint.route('/archive/<path:path>')
-def archives(path):
-    return send_from_directory('archive', path)
-
-
-@main_blueprint.route('/styles/<path:path>')
-def styles(path):
-    return send_from_directory('styles', path)
-
