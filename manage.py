@@ -2,7 +2,7 @@
 
 from flask_script import Manager
 
-from sandbox import app
+from picam import app
 
 manager = Manager(app)
 

@@ -1,2 +1,7 @@
+archive/*
 images/*
+photos/*
+
+*.pyc
+
 .idea/

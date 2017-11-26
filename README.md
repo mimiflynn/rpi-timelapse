@@ -22,7 +22,17 @@ For GIF making magic install ImageMagick with `sudo apt install imagemagick`.
 
 Trigger timelapse capture from my phone via password protected website.
 
-## Features
+## Deploy
+
+```buildoutcfg
+sudo systemctl status photos.service
+
+sudo systemctl start photos.service
+
+sudo systemctl stop photos.service
+```
+
+## End Points
 
 `/` - takes a photo and displays it
 
