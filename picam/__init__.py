@@ -1,4 +1,4 @@
-# sandbox/__init__.py
+# picam/__init__.py
 
 from flask import Flask
 

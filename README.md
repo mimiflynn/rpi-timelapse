@@ -24,6 +24,26 @@ Trigger timelapse capture from my phone via password protected website.
 
 ## Deploy
 
+
+### systemd
+
+
+/etc/systemd/system/photos.service
+```buildoutcfg
+[Unit]
+Description=Gunicorn instance to serve photos
+After=network.target
+
+[Service]
+User=pi
+Group=www-data
+WorkingDirectory=/home/pi/Projects/Photos
+ExecStart=/usr/local/bin/gunicorn --workers 3 -k gevent --threads 12 --bind unix:photos.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ```buildoutcfg
 sudo systemctl status photos.service
 
@@ -31,6 +51,37 @@ sudo systemctl start photos.service
 
 sudo systemctl stop photos.service
 ```
+
+
+### nginx
+
+```buildoutcfg
+upstream flask_server {
+        # swap the commented lines below to switch between socket and port
+        server unix:/home/pi/Projects/Photos/photos.sock fail_timeout=0;
+        # server 127.0.0.1:5000 fail_timeout=0;
+}
+server {
+	listen 2002;
+	server_name domain-name-of-yours.com;
+
+	# Set up proxy for app
+	location / {
+	    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Host $http_host;
+            proxy_redirect off;
+
+	    include proxy_params;
+	    proxy_pass http://flask_server;
+	}
+	
+	# Configure NGINX to deliver static content from the specified folder
+    location /static {
+       alias /home/pi/Projects/Photos/static;
+    }
+}
+```
+
 
 ## End Points
 
