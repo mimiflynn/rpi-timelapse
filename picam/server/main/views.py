@@ -17,30 +17,30 @@ def index():
 def photos():
     timelapse()
     create_gif()
-    path = '/home/pi/Projects/Photos/static/gifs'
+    path = '/home/pi/Projects/Photos/picam/client/static/gifs'
     return render_template('animations.html', tree=make_tree(path))
 
 
 @main_blueprint.route('/view')
 def view():
-    path = '/home/pi/Projects/Photos/static/images'
+    path = '/home/pi/Projects/Photos/picam/client/static/images'
     return render_template('photos.html', tree=make_tree(path))
 
 
 @main_blueprint.route('/archive')
 def archive():
-    path = '/home/pi/Projects/Photos/static/archive'
+    path = '/home/pi/Projects/Photos/picam/client/static/archive'
     return render_template('archive.html', tree=make_tree(path))
 
 
 @main_blueprint.route('/gif')
 def gif():
     create_gif()
-    path = '/home/pi/Projects/Photos/static/gifs'
+    path = '/home/pi/Projects/Photos/picam/client/static/gifs'
     return render_template('animations.html', tree=make_tree(path))
 
 
 @main_blueprint.route('/animations')
 def animations():
-    path = '/home/pi/Projects/Photos/static/gifs'
+    path = '/home/pi/Projects/Photos/picam/client/static/gifs'
     return render_template('animations.html', tree=make_tree(path))
