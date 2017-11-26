@@ -37,5 +37,5 @@ def timelapse():
 
 def create_gif():
     print('create gif of timelapse at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
-    os.system('convert -delay 10 -loop 0 picam/client/static/timelapse/image*.jpg gifs/animation-{:%Y-%m-%d_%H-%M-%S}.gif'.format(datetime.datetime.now()))
+    os.system('convert -delay 10 -loop 0 picam/client/static/timelapse/image*.jpg picam/client/static/gifs/animation-{:%Y-%m-%d_%H-%M-%S}.gif'.format(datetime.datetime.now()))
     print('done creating gif of timelapse at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))

@@ -28,7 +28,6 @@ Trigger timelapse capture from my phone via password protected website.
 
 ```buildoutcfg
 mkdir picam/client/static/{archive,gifs,images,timelapse}
-
 ```
 
 ### systemd
