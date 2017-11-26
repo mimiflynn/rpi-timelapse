@@ -31,7 +31,7 @@ def timelapse():
         camera.capture('/home/pi/Projects/Photos/picam/client/static/timelapse/image{0:04d}.jpg'.format(i))
 
     camera.close()
-    os.system('tar -zcvf archive/{:%Y-%m-%d_%H-%M-%S}.tar.gz timelapse/'.format(datetime.datetime.now()))
+    os.system('tar -zcvf picam/client/static/archive/{:%Y-%m-%d_%H-%M-%S}.tar.gz picam/client/static/timelapse/'.format(datetime.datetime.now()))
     print('done taking timelapse at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
 
 
