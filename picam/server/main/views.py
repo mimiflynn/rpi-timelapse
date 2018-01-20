@@ -1,4 +1,4 @@
-from flask import render_template, send_from_directory, Blueprint
+from flask import render_template, request, Blueprint
 
 from utils.camera import singlephoto, timelapse, create_gif
 from utils.utils import make_tree
@@ -13,9 +13,12 @@ def index():
     return render_template('index.html')
 
 
+# /timelapse?frames=50&freq=5
 @main_blueprint.route('/timelapse')
-def photos():
-    timelapse()
+def timelapse():
+    frames = request.args.get('frames', 50, type=int)
+    freq = request.args.get('freq', 5, type=int)
+    timelapse(frames, freq)
     create_gif()
     path = '/home/pi/Projects/Photos/picam/client/static/gifs'
     return render_template('animations.html', tree=make_tree(path))

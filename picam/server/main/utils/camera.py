@@ -17,14 +17,13 @@ def singlephoto():
     os.system('cp picam/client/static/images/single.jpg picam/client/static/images/single-{:%Y-%m-%d_%H-%M-%S}.jpg'.format(datetime.datetime.now()))
 
 
-def timelapse():
+def timelapse(frames, freq):
     print('start taking timelapse at {:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now()))
+    print('timelapse parameter frames  is ' + frames + ' and frequency is ' + freq)
     camera = PiCamera()
-    # camera.resolution = (3280, 2464)
     camera.resolution = (1024, 768)
     # camera.resolution = (2592, 1944)
     # camera.resolution = (3280, 2464)
-    # camera.framerate = 15
 
     for i in range(50):
         sleep(5)
