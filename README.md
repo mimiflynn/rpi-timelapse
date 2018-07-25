@@ -10,8 +10,6 @@
 - Raspberry Pi 3
 - Raspberry Pi Camera
 
-[Blog Post Describing Setup](https://trailingwhitespace.com/articles/rpi-camera-flask/)
-
 ## Startup
 
 For GIF making magic install ImageMagick with `sudo apt install imagemagick`.
