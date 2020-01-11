@@ -14,7 +14,7 @@
 
 For GIF making magic install ImageMagick with `sudo apt install imagemagick`.
 
-`python3 app.py`
+`python3 manage.py`
 
 ## Objective
 
