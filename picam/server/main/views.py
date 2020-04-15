@@ -16,9 +16,9 @@ def index():
 # /timelapse?frames=50&freq=5
 @main_blueprint.route('/timelapse')
 def timelapse():
-    frames = request.args.get('frames', 50, type=int)
-    freq = request.args.get('freq', 5, type=int)
-    timelapse(frames, freq)
+    # frames = request.args.get('frames', 50, type=int)
+    # freq = request.args.get('freq', 5, type=int)
+    timelapse(50, 5)
     create_gif()
     path = '/home/pi/Projects/Photos/picam/client/static/gifs'
     return render_template('animations.html', tree=make_tree(path))

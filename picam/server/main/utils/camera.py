@@ -25,7 +25,7 @@ def timelapse(frames, freq):
     # camera.resolution = (2592, 1944)
     # camera.resolution = (3280, 2464)
 
-    for i in range(75):
+    for i in range(frames):
         sleep(5)
         camera.capture('/home/pi/Projects/Photos/picam/client/static/timelapse/image{0:04d}.jpg'.format(i))
 
