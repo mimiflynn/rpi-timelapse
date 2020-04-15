@@ -1,7 +1,7 @@
 from flask import render_template, request, Blueprint
 
-from utils.camera import singlephoto, timelapse, create_gif
-from utils.utils import make_tree
+from utils import singlephoto, timelapse, create_gif
+from utils import make_tree
 
 
 main_blueprint = Blueprint('main', __name__,)
