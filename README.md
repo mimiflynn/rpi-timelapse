@@ -41,7 +41,7 @@ After=network.target
 User=pi
 Group=www-data
 WorkingDirectory=/home/pi/Projects/Photos
-ExecStart=/usr/local/bin/gunicorn --workers 3 -k gevent --threads 12 --bind unix:photos.sock -m 007 wsgi:app
+ExecStart=/usr/local/bin/gunicorn --workers 3 --timeout 999 -k gevent --threads 12 --bind unix:photos.sock -m 007 wsgi:app
 
 [Install]
 WantedBy=multi-user.target
