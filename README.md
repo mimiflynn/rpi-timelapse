@@ -12,8 +12,14 @@
 
 ## Startup
 
-For GIF making magic install ImageMagick with `sudo apt install imagemagick`.
+Install dependencies:
 
+```
+sudo apt install libffi-dev imagemagick nginx
+pip install -r requirements.txt
+```
+
+To see the app working run:
 `python3 manage.py`
 
 ## Objective
@@ -47,16 +53,28 @@ ExecStart=/usr/local/bin/gunicorn --workers 3 --timeout 999 -k gevent --threads 
 WantedBy=multi-user.target
 ```
 
+You must start the service with:
+
+```buildoutcfg
+sudo systemctl start photos.service
+```
+
+and stop it with:
+
+```buildoutcfg
+sudo systemctl stop photos.service
+```
+
+and check the status with:
+
 ```buildoutcfg
 sudo systemctl status photos.service
-
-sudo systemctl start photos.service
-
-sudo systemctl stop photos.service
 ```
 
 
 ### nginx
+
+Once the above service is running you can set up the server.
 
 `/etc/nginx/sites-available/default`
 
@@ -87,6 +105,26 @@ server {
 }
 ```
 
+And start it with:
+```
+sudo service nginx start
+```
+
+stop it with: 
+```
+sudo service nginx stop
+```
+
+and see the status with:
+```
+sudo service nginx start
+```
+
+Once the above config is in place, you should restart it with:
+```
+sudo service nginx stop
+sudo service nginx start
+```
 
 ## End Points
 
